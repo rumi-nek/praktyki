@@ -25,7 +25,7 @@ if(!isset($_SESSION['user_id'])){
 
         <form class="typing-area">
             <input type="hidden" name="incoming_id" value="0">
-            <input type="text" name="message" placeholder="Napisz wiadomość">
+            <input type="text" name="message" placeholder="Napisz wiadomość" autocomplete="off">
             <button type="submit">send</button>
         </form>
     </div>
@@ -35,4 +35,5 @@ if(!isset($_SESSION['user_id'])){
 <script src="chat.js"></script>
 
 </body>
+
 </html>
