@@ -1,12 +1,12 @@
 <?php
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "phpchat_db";
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-    $conn = mysqli_connect($hostname, $username, $password, $dbname);
-
-    if(!$conn){
-        echo "Database connection error".mysqli_connect_error();
+    try {
+        $conn = new PDO("sqlite:chat.db");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch(PDOException $e) {
+        echo "Database connection error: " . $e->getMessage();
     }
 ?>
