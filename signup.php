@@ -1,17 +1,17 @@
 <?php
 include_once "config.php";
-$fname = mysqli_real_escape_string($conn, $_POST['fname']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
+$fname = $_POST['fname'];
+$password = $_POST['password'];
 
 if(!empty($fname) && !empty($password)){
-
-    $check_sql = mysqli_query($conn, "SELECT * FROM users WHERE fname = '{$fname}'");
-    if(mysqli_num_rows($check_sql) > 0){
+    $check_sql = $conn->prepare("SELECT * FROM users WHERE fname = ?");
+    $check_sql->execute([$fname]);
+    if($check_sql->fetch()){
         echo "Ten użytkownik już istnieje!";
     } else {
-
-        $sql = mysqli_query($conn, "INSERT INTO users (fname, password) VALUES ('$fname', '$password')");
-        if($sql) echo "success";
+        $sql = $conn->prepare("INSERT INTO users (fname, password) VALUES (?, ?)");
+        $result = $sql->execute([$fname, $password]);
+        if($result) echo "success";
     }
 } else {
     echo "Wszystkie pola są wymagane!";
