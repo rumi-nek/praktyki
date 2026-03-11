@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #808080;
+    padding: 0 10px;
+}
+.wrapper{
+    background: #fff;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 128PX 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+.form{
+    padding:  25px 30px;
+}
+
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.form form{
+    margin:  20px 0;
+}
+
+.form form .error-text{
+    color: #721c24;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.form form .name-details{
+    display: contents;
+
+}
+
+.form form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+}
+
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;   
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form form .button input{
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    background: #3e424b;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 13px;
+}
+
+.form form .field i.active::before{
+    color: #3e424b;
+    content: "\f070";
+}
+
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.chat-container{
+    display:flex;
+    width:100%;
+    height:100vh;
+}
+
+.sidebar{
+    width:260px;
+    background:#2f3136;
+    color:white;
+    padding:20px;
+}
+
+.chat-area{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    background:white;
+}
+
+.chat-area header{
+    padding:20px;
+    border-bottom:1px solid #ddd;
+}
+
+.chat-box{
+    flex:1;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.typing-area{
+    display:flex;
+    padding:15px;
+    border-top:1px solid #ddd;
+}
+
+.typing-area input{
+    flex:1;
+    padding:10px;
+}
+
+.typing-area button{
+    padding:10px 20px;
+}
+
+.chat{
+    margin-bottom:10px;
+}
+
+.chat.outgoing{
+    text-align:right;
+}
+
+.chat p{
+    display:inline-block;
+    padding:10px;
+    background:#eee;
+    border-radius:10px;
+}
